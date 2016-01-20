@@ -29,7 +29,7 @@
 -(void)answer{
     class_addMethod([self.xiaoMing class], @selector(guess), (IMP)guessAnswer, "v@:");
     if ([self.xiaoMing respondsToSelector:@selector(guess)]) {
-        Method method = class_getInstanceMethod([self.xiaoMing class], @selector(guess));
+        //Method method = class_getInstanceMethod([self.xiaoMing class], @selector(guess));
         [self.xiaoMing performSelector:@selector(guess)];
         
     } else{

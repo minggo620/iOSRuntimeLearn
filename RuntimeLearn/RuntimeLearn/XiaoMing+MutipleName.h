@@ -10,7 +10,6 @@
 
 @interface XiaoMing (MutipleName)
 
-//@property(nonatomic,copy) NSString *simpleName;
 @property(nonatomic,copy) NSString *chineseName;
 
 @end
