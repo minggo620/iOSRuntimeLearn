@@ -119,7 +119,6 @@
 		466F04941C4E19FB003C3984 /* RuntimeLearn */ = {
 			isa = PBXGroup;
 			children = (
-				466F04C91C4E2C1A003C3984 /* Answer */,
 				466F04C81C4E2C13003C3984 /* Model */,
 				466F04CD1C4E2DF7003C3984 /* View */,
 				466F04981C4E19FB003C3984 /* AppDelegate.h */,
@@ -170,13 +169,6 @@
 				46DE00981C4F54D4003DB9ED /* XiaoMing+MutipleName.m */,
 			);
 			name = Model;
-			sourceTree = "<group>";
-		};
-		466F04C91C4E2C1A003C3984 /* Answer */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Answer;
 			sourceTree = "<group>";
 		};
 		466F04CD1C4E2DF7003C3984 /* View */ = {
