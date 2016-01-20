@@ -35,7 +35,8 @@ In addition, the modern runtime supports instance variable synthesis for declare
 
 **1. 动态的添加对象的成员变量和方法**  
 **2. 动态交换两个方法的实现**  
-**3. 实现分类也可以添加属性** **4. 实现NSCoding的自动归档和解档**  
+**3. 实现分类也可以添加属性**  
+**4. 实现NSCoding的自动归档和解档**  
 **5. 实现字典转模型的自动转换**  
   
 ###四.编写代码实现
