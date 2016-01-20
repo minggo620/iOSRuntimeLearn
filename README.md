@@ -5,17 +5,15 @@
 [![Github All Releases](https://img.shields.io/badge/download-6M Total-green.svg)](https://github.com/minggo620/iOSConstraintAnimation/archive/master.zip)  
 相比“凌波微步”的swift，Object-C被誉为“如来神掌”。传说Runtime就是支持这“如来神掌”说法的最好体现。听起来总是这么的神秘高级，于是总能在各个论坛看到碎片资料，时间一长总记不住哪里是哪里，每次都要打开还几个网页。这中记不住显然是知识体系还不完整重要体现。还是自己从Runtime的思想到动手代码呈现上做出总结尚为上策。  
 
-![](https://github.com/minggo620/iOSRuntimeLearn/blob/master/picture/runtime1.png?raw=true)  
-###一.基本概念
->
-1. RunTime简称运行时,就是系统在运行的时候的一些机制，其中最主要的是消息机制。
+![学习流程图](http://upload-images.jianshu.io/upload_images/1252638-2fd0645c206122a9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+ ###一.基本概念
+>1. RunTime简称运行时,就是系统在运行的时候的一些机制，其中最主要的是消息机制。
 2. 对于C语言，函数的调用在编译的时候会决定调用哪个函数（ C语言的函数调用请看这里 ）。编译完成之后直接顺序执行，无任何二义性。  
 3. OC的函数调用成为消息发送。属于动态调用过程。在编译的时候并不能决定真正调用哪个函数（事实证明，在编 译阶段，OC可以调用任何函数，即使这个函数并未实现，只要申明过就不会报错。而C语言在编译阶段就会报错）。  
 4. 只有在真正运行的时候才会根据函数的名称找 到对应的函数来调用。    
 
 **官网文档还提供关于传统和现代版本Runtime的说明**
->
-1. In the legacy runtime, if you change the layout of instance variables in a class, you must recompile classes that inherit from it.
+>1. In the legacy runtime, if you change the layout of instance variables in a class, you must recompile classes that inherit from it.
 2. In the modern runtime, if you change the layout of instance variables in a class, you do not have to recompile classes that inherit from it.  
 In addition, the modern runtime supports instance variable synthesis for declared properties (see Declared Properties in The Objective-C Programming Language).  
   
@@ -46,7 +44,8 @@ In addition, the modern runtime supports instance variable synthesis for declare
 	XiaoMing: My name is XiaoMing.  
 	Teacher: Pardon?  
 	XiaoMing: My name is __    
-	在程序当中，假设XiaoMing的name原来的值为XiaoMing，后来被Runtime偷换了一个名字叫Minggo。那么，Runtime是如何做到的呢？
+
+在程序当中，假设XiaoMing的name原来的值为XiaoMing，后来被Runtime偷换了一个名字叫Minggo。那么，Runtime是如何做到的呢？
 
 #####2）Step：  
 ①动态获取XiaoMing类中的所有属性[当然包括私有]  
@@ -86,7 +85,8 @@ In addition, the modern runtime supports instance variable synthesis for declare
 	XiaoMing: My name is XiaoMing.  
 	Teacher: Pardon?  
 	XiaoMing: My name is __    
-	在程序当中，假设XiaoMing的第一次回答为firstSay，后来被Runtime交换了一个名字叫secondSay的方法，最终再调用firstSay的时候，其实是调用了secondSay的实现。那么，Runtime是如何做到的呢？
+
+在程序当中，假设XiaoMing的第一次回答为firstSay，后来被Runtime交换了一个名字叫secondSay的方法，最终再调用firstSay的时候，其实是调用了secondSay的实现。那么，Runtime是如何做到的呢？
 
 #####2）Step：  
 ①动态找到firstSay和secondSay方法    
@@ -118,16 +118,18 @@ In addition, the modern runtime supports instance variable synthesis for declare
 	XiaoMing: I don't know.
 	Teacher: Guess?.
 	LiHua: He is from __
-	在程序当中，假设XiaoMing的中没有`guess`这个方法，后来被Runtime添加一个名字叫guess的方法，最终再调用guess方法做出相应。那么，Runtime是如何做到的呢？  
+
+在程序当中，假设XiaoMing的中没有`guess`这个方法，后来被Runtime添加一个名字叫guess的方法，最终再调用guess方法做出相应。那么，Runtime是如何做到的呢？  
 
 #####2）Step：  
 ①动态给XiaoMing类中添加guess方法：  
 
 	class_addMethod([self.xiaoMing class], @selector(guess), (IMP)guessAnswer, "v@:");  
-	这里参数地方说明一下：
-	(IMP)guessAnswer 意思是guessAnswer的地址指针;
-	"v@:" 意思是，v代表无返回值void，如果是i则代表int；@代表 id sel; : 代表 SEL _cmd;
-	“v@:@@” 意思是，两个参数的没有返回值。  
+
+这里参数地方说明一下：
+(IMP)guessAnswer 意思是guessAnswer的地址指针;
+"v@:" 意思是，v代表无返回值void，如果是i则代表int；@代表 id sel; : 代表 SEL _cmd;
+“v@:@@” 意思是，两个参数的没有返回值。  
 
 
 ②调用guess方法响应事件：  
@@ -139,9 +141,10 @@ In addition, the modern runtime supports instance variable synthesis for declare
 	void guessAnswer(id self,SEL _cmd){
     	NSLog(@"He is from GuangTong");   
 	}  
-	这个有两个地方留意一下：
-	1.void的前面没有+、-号，因为只是C的代码。
-	2.必须有两个指定参数(id self,SEL _cmd)  
+
+这个有两个地方留意一下：
+1.void的前面没有+、-号，因为只是C的代码。
+2.必须有两个指定参数(id self,SEL _cmd)  
 
 #####3）Show Code：  
 	-(void)answer{
@@ -169,7 +172,8 @@ In addition, the modern runtime supports instance variable synthesis for declare
 	XiaoMing: I have no one.
 	LiHua: You should have one.
 	LiHua: Your Chinese name is __
-	在程序当中，假设XiaoMing的中没有`chineseName`这个属性，后来被Runtime添加一个名字叫chineseName的属性。那么，Runtime是如何做到的呢？
+
+在程序当中，假设XiaoMing的中没有`chineseName`这个属性，后来被Runtime添加一个名字叫chineseName的属性。那么，Runtime是如何做到的呢？
 
 #####2）Step：
 ①申明chineseName属性
