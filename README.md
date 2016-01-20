@@ -212,6 +212,6 @@ In addition, the modern runtime supports instance variable synthesis for declare
 上边就是最要的Code了。以下更精彩。
 
 ###三.效果图更直观
-
+![](https://github.com/minggo620/iOSRuntimeLearn/blob/master/picture/runtime.gif?raw=true)
 ###四.源码下载地址更详细
 #####*[https://github.com/minggo620/iOSRuntimeLearn.git](https://github.com/minggo620/iOSRuntimeLearn.git)*
