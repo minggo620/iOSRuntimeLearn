@@ -188,6 +188,9 @@
                                             <constraint firstAttribute="height" constant="30" id="raF-S2-kcr"/>
                                         </constraints>
                                         <state key="normal" title="Change Answer"/>
+                                        <connections>
+                                            <action selector="changeAnswer:" destination="qaw-Aa-VVA" eventType="touchUpInside" id="ais-1E-Ha4"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="XiaoMing: My name is " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w3e-RR-k7L">
                                         <rect key="frame" x="12" y="198" width="188" height="21"/>
@@ -236,6 +239,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="exchange method" id="skX-yT-Wty"/>
+                    <connections>
+                        <outlet property="nameTf" destination="i1Z-RS-oEU" id="utp-wF-lSb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aAy-i5-0li" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -256,7 +262,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="opi-VW-X4s">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Teacher: What's  LiLei's name?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YYL-Kx-OTb">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Teacher: Where is LiLei from?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YYL-Kx-OTb">
                                         <rect key="frame" x="12" y="48" width="292" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="63h-Ag-DYo"/>
@@ -274,8 +280,8 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LiHua: I know." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="maA-to-szZ">
-                                        <rect key="frame" x="10" y="125" width="100" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Teacher: Guess?." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="maA-to-szZ">
+                                        <rect key="frame" x="10" y="125" width="125" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="bws-OC-MJU"/>
                                         </constraints>
@@ -290,6 +296,9 @@
                                             <constraint firstAttribute="width" constant="151" id="fvS-9P-bFb"/>
                                         </constraints>
                                         <state key="normal" title="Add Answer"/>
+                                        <connections>
+                                            <action selector="addAnswer:" destination="N4f-PN-xXI" eventType="touchUpInside" id="jvY-je-7S7"/>
+                                        </connections>
                                     </button>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LHq-ka-tZ8">
                                         <rect key="frame" x="167" y="195" width="137" height="30"/>
@@ -299,7 +308,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LiHua: His name is " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dii-AN-1bl">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LiHua: He is from " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dii-AN-1bl">
                                         <rect key="frame" x="12" y="198" width="155" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="155" id="rXN-DL-a2K"/>
@@ -338,6 +347,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="add method" id="zcq-yV-2RS"/>
+                    <connections>
+                        <outlet property="cityTf" destination="LHq-ka-tZ8" id="KJK-6d-vcB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R0E-Ig-cFX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -392,6 +404,9 @@
                                             <constraint firstAttribute="width" constant="151" id="ht9-k5-maJ"/>
                                         </constraints>
                                         <state key="normal" title="Add name"/>
+                                        <connections>
+                                            <action selector="addName:" destination="OfZ-hr-UJt" eventType="touchUpInside" id="ZRF-9i-ztI"/>
+                                        </connections>
                                     </button>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="F7R-UP-QPt">
                                         <rect key="frame" x="232" y="195" width="72" height="30"/>
@@ -440,6 +455,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="add extention variable" id="ub8-0y-IJS"/>
+                    <connections>
+                        <outlet property="chineseNameTf" destination="F7R-UP-QPt" id="l7Y-Jf-N2d"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RE0-Fz-bhq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

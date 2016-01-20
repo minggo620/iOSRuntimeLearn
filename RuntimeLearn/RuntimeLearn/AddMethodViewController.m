@@ -7,31 +7,44 @@
 //
 
 #import "AddMethodViewController.h"
+#import "XiaoMing.h"
 
 @interface AddMethodViewController ()
-
+- (IBAction)addAnswer:(id)sender;
+@property (weak, nonatomic) IBOutlet UITextField *cityTf;
+@property(nonatomic,retain) XiaoMing *xiaoMing;
 @end
 
 @implementation AddMethodViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.xiaoMing = [XiaoMing new];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(void)answer{
+    class_addMethod([self.xiaoMing class], @selector(guess), (IMP)guessAnswer, "v@:");
+    if ([self.xiaoMing respondsToSelector:@selector(guess)]) {
+        Method method = class_getInstanceMethod([self.xiaoMing class], @selector(guess));
+        [self.xiaoMing performSelector:@selector(guess)];
+        
+    } else{
+        NSLog(@"Sorry,I don't know");
+    }
+    self.cityTf.text = @"GuangTong";
 }
-*/
 
+void guessAnswer(id self,SEL _cmd){
+   
+    NSLog(@"He is from GuangTong");
+    
+}
+
+- (IBAction)addAnswer:(id)sender {
+    [self answer];
+}
 @end

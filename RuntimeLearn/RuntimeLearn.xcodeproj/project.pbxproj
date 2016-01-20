@@ -20,6 +20,7 @@
 		466F04D61C4E2E54003C3984 /* AddMethodViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 466F04D51C4E2E54003C3984 /* AddMethodViewController.m */; };
 		466F04D91C4E2E6A003C3984 /* AddExtentionVariableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 466F04D81C4E2E6A003C3984 /* AddExtentionVariableViewController.m */; };
 		466F04DC1C4E3A9A003C3984 /* ExchangeMethodViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 466F04DB1C4E3A9A003C3984 /* ExchangeMethodViewController.m */; };
+		46DE00991C4F54D4003DB9ED /* XiaoMing+MutipleName.m in Sources */ = {isa = PBXBuildFile; fileRef = 46DE00981C4F54D4003DB9ED /* XiaoMing+MutipleName.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,8 @@
 		466F04D81C4E2E6A003C3984 /* AddExtentionVariableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddExtentionVariableViewController.m; sourceTree = "<group>"; };
 		466F04DA1C4E3A9A003C3984 /* ExchangeMethodViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExchangeMethodViewController.h; sourceTree = "<group>"; };
 		466F04DB1C4E3A9A003C3984 /* ExchangeMethodViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExchangeMethodViewController.m; sourceTree = "<group>"; };
+		46DE00971C4F54D4003DB9ED /* XiaoMing+MutipleName.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "XiaoMing+MutipleName.h"; sourceTree = "<group>"; };
+		46DE00981C4F54D4003DB9ED /* XiaoMing+MutipleName.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "XiaoMing+MutipleName.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +166,8 @@
 			children = (
 				466F04CA1C4E2C39003C3984 /* XiaoMing.h */,
 				466F04CB1C4E2C39003C3984 /* XiaoMing.m */,
+				46DE00971C4F54D4003DB9ED /* XiaoMing+MutipleName.h */,
+				46DE00981C4F54D4003DB9ED /* XiaoMing+MutipleName.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -320,6 +325,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				466F049D1C4E19FB003C3984 /* ViewController.m in Sources */,
+				46DE00991C4F54D4003DB9ED /* XiaoMing+MutipleName.m in Sources */,
 				466F04D61C4E2E54003C3984 /* AddMethodViewController.m in Sources */,
 				466F04D91C4E2E6A003C3984 /* AddExtentionVariableViewController.m in Sources */,
 				466F04CC1C4E2C39003C3984 /* XiaoMing.m in Sources */,
@@ -552,6 +558,7 @@
 				466F04C11C4E19FC003C3984 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		466F04C21C4E19FC003C3984 /* Build configuration list for PBXNativeTarget "RuntimeLearnTests" */ = {
 			isa = XCConfigurationList;
@@ -560,6 +567,7 @@
 				466F04C41C4E19FC003C3984 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		466F04C51C4E19FC003C3984 /* Build configuration list for PBXNativeTarget "RuntimeLearnUITests" */ = {
 			isa = XCConfigurationList;
@@ -568,6 +576,7 @@
 				466F04C71C4E19FC003C3984 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

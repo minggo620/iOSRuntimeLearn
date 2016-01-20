@@ -7,31 +7,44 @@
 //
 
 #import "ExchangeMethodViewController.h"
+#import "XiaoMing.h"
+#import <objc/runtime.h>
 
 @interface ExchangeMethodViewController ()
-
+- (IBAction)changeAnswer:(id)sender;
+@property (weak, nonatomic) IBOutlet UITextField *nameTf;
+@property(nonatomic,retain) XiaoMing *xiaoMing;
 @end
 
 @implementation ExchangeMethodViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.xiaoMing = [XiaoMing new];
+    NSString *firstName = [self.xiaoMing firstSay];
+    NSLog(@"XiaoMing:My name is %@",firstName);
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(void)answer{
+    
+    Method m1 = class_getInstanceMethod([self.xiaoMing class], @selector(firstSay));
+    Method m2 = class_getInstanceMethod([self.xiaoMing class], @selector(secondSay));
+    
+    method_exchangeImplementations(m1, m2);
+    NSString *secondName = [self.xiaoMing firstSay];
+    
+    self.nameTf.text = secondName;
+    NSLog(@"XiaoMing:My name is %@",secondName);
 }
-*/
+
+
+- (IBAction)changeAnswer:(id)sender {
+    [self answer];
+}
 
 @end
