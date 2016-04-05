@@ -1,3 +1,7 @@
+##微信公众号:
+
+![学习流程图](https://github.com/minggo620/iOSRuntimeLearn/blob/master/picture/gongzhonghao.jpg?raw=true)  
+
 #谈Runtime机制和使用的整体化梳理
 [![Support](https://img.shields.io/badge/support-iOS%207%2B%20-blue.svg?style=flat)](https://www.apple.com/nl/ios/)&nbsp;
 [![Travis](https://img.shields.io/travis/rust-lang/rust.svg)]()
